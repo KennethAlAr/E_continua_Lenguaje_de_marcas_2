@@ -1,0 +1,61 @@
+<!ELEMENT catalogo (libros, revistas, usuarios, prestamos)>
+<!ATTLIST catalogo fecha CDATA #REQUIRED>
+<!--Entendemos que cada vez que hagamos una actualización del catálogo debemos poner una fecha-->
+<!--Suponemos que, para todos los elementos hijos de catálogo, la cardinalidad del contenido de estos debe ser "+" (mínimo 1, sin máximo) por la lógica del enunciado-->
+
+
+<!--LIBROS-->
+<!ELEMENT libros (libro+)>
+<!ELEMENT libro (titulo, anio, autores, etiquetas?)>
+<!ATTLIST libro
+    id ID #REQUIRED
+    categoria CDATA #REQUIRED
+    isbn CDATA #REQUIRED
+    paginas CDATA #IMPLIED
+    >
+<!--Por la información del xml asumimos que todos los atributos a excepción de "paginas" son requeridos-->
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT anio (#PCDATA)>
+<!ELEMENT autores (autor+)>
+<!ELEMENT autor (nombre, orcid?)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT orcid (#PCDATA)>
+<!ELEMENT etiquetas (etiqueta*)>
+<!ELEMENT etiqueta (#PCDATA)>
+
+
+<!--REVISTAS-->
+<!ELEMENT revistas (revista+)>
+<!ELEMENT revista (titulo, anio)>
+<!ATTLIST revista
+    id ID #REQUIRED
+    area CDATA #REQUIRED
+    issn CDATA #REQUIRED
+    numero CDATA #REQUIRED
+    >
+<!--"titulo" y "anio" ya están declarados mas arriba-->
+
+
+<!--USUARIOS-->
+<!ELEMENT usuarios (usuario+)>
+<!ELEMENT usuario (nombre, email)>
+<!ATTLIST usuario
+    id ID #REQUIRED
+    tipo (profesor | alumno) #REQUIRED
+    >
+<!--Asumimos que los usuarios solo pueden ser o alumnos o profesores-->
+<!--"nombre" ya está declarado mas arriba-->
+<!ELEMENT email (#PCDATA)>
+
+
+<!--PRESTAMOS-->
+<!ELEMENT prestamos (prestamo+)>
+<!ELEMENT prestamo (fecha_inicio, fecha_fin?, estado)>
+<!ATTLIST prestamo
+    id ID #REQUIRED
+    itemRef IDREF #REQUIRED
+    usuarioRef IDREF #REQUIRED
+    >
+<!ELEMENT fecha_inicio (#PCDATA)>
+<!ELEMENT fecha_fin (#PCDATA)>
+<!ELEMENT estado (#PCDATA)>
