@@ -68,7 +68,7 @@
                                 <xs:complexType>
                                     <xs:sequence>
                                         <xs:element name="nombre" type="xs:string"/>
-                                        <xs:element name="email" type="xs:string"/>
+                                        <xs:element name="email" type="emailUsuario"/>
                                     </xs:sequence>
                                     <xs:attribute name="id" type="xs:ID" use="required"/>
                                     <xs:attribute name="tipo" type="tipoUsuario" use="required"/>
@@ -121,10 +121,23 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <xs:simpleType name="emailUsuario">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([a-z0-9.\-])+@([a-z0-9.\-])+\.[a-z]{2,}"/>
+            <!--
+            Para validar el email hay que tener en cuenta varias cosas:
+                -La parte a la izquierda de la arroba puede ser un numero variable de letras, números o ciertos símbolos especiales
+                (en este caso solo validamos los mas comunes como el "." y el "-", pero se podría poner toda la lista de símbolos válidos para correos electrónicos)
+                -La parte a la derecha de la arroba puede ser un número varialbe de letras y números y puede contener "." y "-".
+                -El dominio puede ser un número variable de letras, como mínimo dos.
+            
+            -->
+        </xs:restriction>
+    </xs:simpleType>
+
     <xs:simpleType name="tipoUsuario">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="profesor"/>
-            <xs:enumeration value="alumno"/>
+            <xs:pattern value="profesor|alumno"/>
         </xs:restriction>
     </xs:simpleType>
 
