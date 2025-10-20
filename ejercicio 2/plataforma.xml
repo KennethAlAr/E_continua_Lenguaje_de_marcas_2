@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plataforma SYSTEM "plataforma.dtd">
-<plataforma fecha_publicacion="2025-10-20">
+<!--<!DOCTYPE plataforma SYSTEM "plataforma.dtd">-->
+
+<plataforma fecha_publicacion="2025-10-20" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="plataforma.xsd">
     <cursos>
         <curso id="C01" codigo="003-101">
             <titulo>Lenguajes de marca</titulo>
@@ -21,7 +22,7 @@
         <curso id="D02">
             <titulo>Prework Lenguajes de marca</titulo>
             <nivel>Básico</nivel>
-            <modalidad>Extracurricular</modalidad>
+            <modalidad>Online</modalidad>
             <horas>20</horas>
         </curso>
     </cursos>
@@ -50,12 +51,12 @@
         <evaluacion id="E001-DFG" matriculaRef="K001">
             <instrumento>Ordenador</instrumento>
             <convocatoria>Diciembre</convocatoria>
-            <nota>8,5</nota>
+            <nota>8.5</nota>
         </evaluacion>
         <evaluacion id="X002-VBN" matriculaRef="J002">
             <instrumento>Arduino</instrumento>
-            <convocatoria>Febrero</convocatoria>
-            <nota>5,0</nota>
+            <convocatoria>Junio</convocatoria>
+            <nota>5.0</nota>
         </evaluacion>
     </evaluaciones>
 </plataforma>

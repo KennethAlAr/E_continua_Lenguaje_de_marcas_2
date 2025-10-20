@@ -55,15 +55,17 @@
     <xs:element name="autores">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="autor" maxOccurs="unbounded">
-                <!--Tal y como hemos hecho en el DTD, asumimos que siempre debe haber un autor, aunque sea "anónimo"-->
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="nombre" type="xs:string"/>
-                            <xs:element name="orcid" type="orcidAutor" minOccurs="0"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
+                <xs:element ref="autor" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="autor">
+    <!--Tal y como hemos hecho en el DTD, asumimos que siempre debe haber un autor, aunque sea "anónimo"-->
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nombre" type="xs:string"/>
+                <xs:element name="orcid" type="orcidAutor" minOccurs="0"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
