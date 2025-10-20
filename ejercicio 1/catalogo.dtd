@@ -20,7 +20,7 @@
 <!ELEMENT autor (nombre, orcid?)>
 <!ELEMENT nombre (#PCDATA)>
 <!ELEMENT orcid (#PCDATA)>
-<!ELEMENT etiquetas (etiqueta*)>
+<!ELEMENT etiquetas (etiqueta+)>
 <!ELEMENT etiqueta (#PCDATA)>
 
 
