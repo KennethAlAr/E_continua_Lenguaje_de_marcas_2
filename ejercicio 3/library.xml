@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="library.xsd">
+    <book>
+        <title>El color de la magia</title>
+        <author>Terry Pratchett</author>
+        <year>1983</year>
+        <publisher>Colección Debolsillo</publisher>
+        <pages>284</pages>
+    </book>
+    <book>
+        <title>Las legiones malditas</title>
+        <author>Anónimo</author>
+        <year>2008</year>
+        <publisher>Ediciones B</publisher>
+        <pages>864</pages>
+    </book>
+    <book>
+        <title>Cien años de soledad</title>
+        <author>Gabriel García Márquez</author>
+        <year>1967</year>
+        <publisher>Penguin Random House</publisher>
+        <pages>448</pages>
+    </book>
+</library>
