@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plataforma SYSTEM "plataforma.dtd">
+<plataforma fecha_publicacion="2025-10-20">
+    <cursos>
+        <curso id="C01" codigo="003-101">
+            <titulo>Lenguajes de marca</titulo>
+            <nivel>Avanzado</nivel>
+            <modalidad>Presencial</modalidad>
+            <horas>70</horas>
+            <modulos>
+                <modulo clave="101">
+                    <nombre>Aplicaciones web</nombre>
+                    <horas>50</horas>
+                </modulo>
+                <modulo>
+                    <nombre>Estructuras de datos y validación</nombre>
+                    <horas>20</horas>
+                </modulo>
+            </modulos>
+        </curso>
+        <curso id="D02">
+            <titulo>Prework Lenguajes de marca</titulo>
+            <nivel>Básico</nivel>
+            <modalidad>Extracurricular</modalidad>
+            <horas>20</horas>
+        </curso>
+    </cursos>
+    <alumnos>
+        <alumno id="A2025-01" nif="12345678-B">
+            <nombre>Kenneth Alonso Arce</nombre>
+            <email>kenneth@email.com</email>
+            <telefono>666123123</telefono>
+        </alumno>
+        <alumno id="C2025-02">
+            <nombre>Juan Pérez Gómez</nombre>
+            <email>juan@email.es</email>
+        </alumno>
+    </alumnos>
+    <matriculas>
+        <matricula id="K001" alumnoRef="A2025-01" cursoRef="C01">
+            <fecha_alta>2025-02-15</fecha_alta>
+            <estado>en_curso</estado>
+        </matricula>
+        <matricula id="J002" alumnoRef="C2025-02" cursoRef="D02">
+            <fecha_alta>2025-01-09</fecha_alta>
+            <estado>finalizado</estado>
+        </matricula>
+    </matriculas>
+    <evaluaciones>
+        <evaluacion id="E001-DFG" matriculaRef="K001">
+            <instrumento>Ordenador</instrumento>
+            <convocatoria>Diciembre</convocatoria>
+            <nota>8,5</nota>
+        </evaluacion>
+        <evaluacion id="X002-VBN" matriculaRef="J002">
+            <instrumento>Arduino</instrumento>
+            <convocatoria>Febrero</convocatoria>
+            <nota>5,0</nota>
+        </evaluacion>
+    </evaluaciones>
+</plataforma>
