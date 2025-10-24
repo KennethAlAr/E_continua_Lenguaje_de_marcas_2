@@ -41,11 +41,12 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="titulo" type="xs:string"/>
-                <xs:element name="anio" type="xs:integer"/>
+                <xs:element name="anio" type="datoAnio"/>
                 <xs:element ref="autores"/>
                 <xs:element ref="etiquetas" minOccurs="0"/>
             </xs:sequence>
             <xs:attribute name="id" type="xs:ID" use="required"/>
+            <!--El tipo de dato de todos los "id" los ponemos como xs:ID para garantizar su unicidad y poder tener una integridad referencial básica-->
             <xs:attribute name="categoria" type="xs:string" use="required"/>
             <xs:attribute name="isbn" type="isbnLibro" use="required"/>
             <xs:attribute name="paginas" type="xs:integer" use="optional"/>
@@ -92,13 +93,21 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <xs:simpleType name="datoAnio">
+        <xs:restriction base="xs:gYear">
+            <xs:minExclusive value="1400"/>
+            <xs:maxExclusive value="2100"/>
+            <!--Por restringir un poco el valor del año del libro, las bibliotecas históricas o universitarias suelen tener copias de libros de los primeros años tras la invención de la imprenta-->
+        </xs:restriction>
+    </xs:simpleType>
+
 
 <!--REVISTA-->
     <xs:element name="revista">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="titulo" type="xs:string"/>
-                <xs:element name="anio" type="xs:integer"/>
+                <xs:element name="anio" type="datoAnio"/> <!--Usamos el mismo tipo de dato que en libro-->
             </xs:sequence>
             <xs:attribute name="id" type="xs:ID" use="required"/>
             <xs:attribute name="area" type="xs:string" use="required"/>
@@ -156,6 +165,7 @@
             <xs:attribute name="id" type="xs:ID" use="required"/>
             <xs:attribute name="itemRef" type="xs:IDREF" use="required"/>
             <xs:attribute name="usuarioRef" type="xs:IDREF" use="required"/>
+            <!--itemRef y usuarioRef tienen tipo de dato xs:IDREF para exigir que sus valores apunten a otros xs:ID existentes (integridad referencial básica)-->
         </xs:complexType>
     </xs:element>
 

@@ -47,6 +47,7 @@
                 <xs:element ref="modulos" minOccurs="0"/>
             </xs:sequence>
             <xs:attribute name="id" type="xs:ID" use="required"/>
+            <!--El tipo de dato de todos los "id" los ponemos como xs:ID para garantizar su unicidad y poder tener una integridad referencial básica-->
             <xs:attribute name="codigo" type="codigoCurso" use="optional"/>
         </xs:complexType>
     </xs:element>
@@ -148,6 +149,7 @@
             <xs:attribute name="id" type="xs:ID" use="required"/>
             <xs:attribute name="alumnoRef" type="xs:IDREF" use="required"/>
             <xs:attribute name="cursoRef" type="xs:IDREF" use="required"/>
+            <!--Como en el ejercicio anterior, las claves foráneas serán del tipo xs:IDREF para poder hacer referencia a id's del formulario-->
         </xs:complexType>
     </xs:element>
 
